@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proposta de Parceria — Landing Pages · STYLISH</title>
+  <meta name="description" content="Proposta de parceria para inclusão de landing pages no pacote de branding STYLISH." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --paper: #f5f4f0;
+      --paper-muted: rgba(245, 244, 240, 0.7);
+      --paper-faint: rgba(245, 244, 240, 0.4);
+      --border: rgba(245, 244, 240, 0.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background: var(--ink);
+      color: var(--paper);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Archivo', system-ui, sans-serif;
+      font-weight: 300;
+      background: var(--ink);
+      color: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    ::selection {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .font-display { font-family: 'Bodoni Moda', Georgia, serif; }
+
+    .text-stroke {
+      -webkit-text-stroke: 1px var(--paper);
+      color: transparent;
+    }
+
+    .label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--paper-muted);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container { padding: 0 2.5rem; }
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      mix-blend-mode: difference;
+    }
+
+    @media (min-width: 768px) {
+      header { padding: 1.25rem 2.5rem; }
+    }
+
+    header .logo {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.06em;
+      color: var(--paper);
+      text-decoration: none;
+    }
+
+    header .logo sup { font-size: 0.6em; vertical-align: super; }
+
+    header nav {
+      display: none;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      header nav { display: flex; }
+    }
+
+    header nav a {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--paper);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    header nav a:hover { opacity: 1; }
+
+    /* Hero */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 0 4rem;
+      position: relative;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-meta dt {
+      font-size: 0.6875rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-meta dd {
+      font-size: 0.875rem;
+      color: var(--paper-muted);
+    }
+
+    .hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-size: clamp(2.75rem, 9vw, 7rem);
+      max-width: 14ch;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-lead {
+      margin-top: 2.5rem;
+      max-width: 36rem;
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      color: var(--paper-muted);
+      line-height: 1.75;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid var(--border);
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--paper-muted);
+    }
+
+    /* Marquee */
+    .marquee-wrap {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      overflow: hidden;
+      background: var(--ink);
+    }
+
+    .marquee-wrap.invert {
+      background: var(--paper);
+      border-color: rgba(10, 10, 10, 0.1);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 35s linear infinite;
+    }
+
+    .marquee-wrap.invert .marquee-track { animation-direction: reverse; }
+
+    .marquee-track span {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      padding: 0 1.5rem;
+      white-space: nowrap;
+    }
+
+    .marquee-wrap.invert .marquee-track .outline {
+      -webkit-text-stroke: 1px var(--ink);
+      color: transparent;
+    }
+
+    .marquee-wrap.invert .marquee-track .solid { color: var(--ink); }
+    .marquee-wrap.invert .marquee-track .dot { color: rgba(10, 10, 10, 0.3); }
+
+    .marquee-track .outline { -webkit-text-stroke: 1px var(--paper); color: transparent; }
+    .marquee-track .solid { color: var(--paper); }
+    .marquee-track .dot { color: var(--paper-faint); }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    section:first-of-type { border-top: none; }
+
+    .section-num {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.125rem;
+      color: var(--paper-faint);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-size: clamp(2.25rem, 6vw, 4.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+      max-width: 36rem;
+      color: var(--paper-muted);
+      font-size: 1.0625rem;
+      line-height: 1.75;
+    }
+
+    /* Cards grid */
+    .cards {
+      display: grid;
+      gap: 1px;
+      margin-top: 3.5rem;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    @media (min-width: 768px) {
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      background: var(--ink);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+      .card { padding: 3rem 2.5rem; }
+    }
+
+    .card-tag {
+      font-size: 0.6875rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      margin-bottom: 1.5rem;
+    }
+
+    .card h3 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-price {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-price small {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    .card-desc {
+      color: var(--paper-muted);
+      font-size: 0.9375rem;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+
+    .card-list {
+      list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .card-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+
+    .card-list li span:first-child {
+      color: var(--paper-faint);
+      flex-shrink: 0;
+    }
+
+    .card-list li span:last-child {
+      text-align: right;
+      color: var(--paper-muted);
+    }
+
+    .card-footer {
+      margin-top: 1.5rem;
+      font-size: 0.8125rem;
+      color: var(--paper-faint);
+    }
+
+    /* Callout */
+    .callout {
+      margin-top: 2.5rem;
+      padding: 1.5rem 2rem;
+      border-left: 2px solid var(--paper);
+      background: rgba(245, 244, 240, 0.03);
+      font-size: 0.9375rem;
+      color: var(--paper-muted);
+      line-height: 1.7;
+    }
+
+    .callout strong { color: var(--paper); font-weight: 500; }
+
+    /* Maintenance */
+    .plans {
+      display: grid;
+      gap: 1px;
+      margin-top: 3.5rem;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    @media (min-width: 768px) {
+      .plans { grid-template-columns: 1fr 1fr; }
+    }
+
+    .plan {
+      background: var(--ink);
+      padding: 2.5rem 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .plan { padding: 3rem 2.5rem; }
+    }
+
+    .plan h3 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-price {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan ul {
+      list-style: none;
+    }
+
+    .plan ul li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--paper-muted);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .plan ul li::before {
+      content: '—';
+      color: var(--paper-faint);
+      flex-shrink: 0;
+    }
+
+    /* Flow */
+    .flow {
+      margin-top: 3rem;
+      display: grid;
+      gap: 0;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .flow-step:first-child { border-top: 1px solid var(--border); }
+
+    .flow-icon {
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--paper-faint);
+      flex-shrink: 0;
+    }
+
+    .flow-step h4 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-step p {
+      font-size: 0.9375rem;
+      color: var(--paper-muted);
+    }
+
+    .flow-step ul {
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+
+    .flow-step ul li {
+      font-size: 0.875rem;
+      color: var(--paper-muted);
+      padding: 0.25rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .flow-step ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--paper-faint);
+    }
+
+    /* Steps */
+    .steps {
+      margin-top: 3rem;
+      counter-reset: step;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem 2rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--paper-faint);
+    }
+
+    .step h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .step p {
+      font-size: 0.875rem;
+      color: var(--paper-muted);
+    }
+
+    /* Table */
+    .table-wrap {
+      margin-top: 3rem;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    thead {
+      background: rgba(245, 244, 240, 0.04);
+    }
+
+    th {
+      text-align: left;
+      padding: 1rem 1.25rem;
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--paper-muted);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    td strong { color: var(--paper); font-weight: 500; }
+
+    .table-note {
+      margin-top: 1rem;
+      font-size: 0.8125rem;
+      color: var(--paper-faint);
+      font-style: italic;
+    }
+
+    /* Benefits */
+    .benefits {
+      display: grid;
+      gap: 0;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .benefits { grid-template-columns: 1fr 1fr; }
+    }
+
+    .benefit {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 768px) {
+      .benefit:nth-child(odd) { padding-right: 2rem; }
+      .benefit:nth-child(even) { padding-left: 2rem; border-left: 1px solid var(--border); }
+    }
+
+    .benefit h4 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit p {
+      font-size: 0.875rem;
+      color: var(--paper-muted);
+    }
+
+    /* CTA */
+    .cta {
+      min-height: 70svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem;
+      position: relative;
+    }
+
+    .cta-lead {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--paper-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-title {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(3rem, 12vw, 8rem);
+      font-weight: 600;
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+    }
+
+    .cta-desc {
+      margin-top: 2rem;
+      max-width: 28rem;
+      color: var(--paper-muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding: 1.25rem 2.5rem;
+      border: 1px solid var(--paper);
+      border-radius: 9999px;
+      color: var(--paper);
+      text-decoration: none;
+      font-size: 0.8125rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .cta-btn:hover {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .cta-contact {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--paper-faint);
+    }
+
+    .cta-contact a {
+      color: var(--paper-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .cta-contact a:hover { color: var(--paper); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+    }
+
+    /* Print */
+    @media print {
+      header { position: static; mix-blend-mode: normal; }
+      .marquee-track { animation: none; }
+      .cta-btn { border-color: var(--ink); color: var(--ink); }
+      body, html { background: white; color: var(--ink); }
+      .card, .plan, section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#topo" class="logo">JS<sup>®</sup></a>
+    <nav>
+      <a href="#criacao">Criação</a>
+      <a href="#manutencao">Manutenção</a>
+      <a href="#fluxo">Fluxo</a>
+      <a href="#condicoes">Condições</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="topo">
+    <div class="container">
+      <dl class="hero-meta">
+        <div>
+          <dt>De</dt>
+          <dd>André · Desenvolvimento Web</dd>
+        </div>
+        <div>
+          <dt>Para</dt>
+          <dd>STYLISH · Jonatas Santiago</dd>
+        </div>
+        <div>
+          <dt>Data</dt>
+          <dd>Julho / 2026</dd>
+        </div>
+      </dl>
+
+      <p class="label">Proposta de parceria</p>
+      <h1 class="font-display">Landing Pages <em>para</em> STYLISH</h1>
+      <p class="hero-lead">
+        Parceria para incluir landing pages profissionais no pacote de branding da STYLISH.
+        Vocês entregam identidade visual e estratégia; eu entrego a página no ar, otimizada e pronta para converter.
+      </p>
+      <span class="hero-badge">Modelo · Preço de fornecedor · Margem livre</span>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="outline">LANDING PAGES</span><span class="dot">✦</span>
+      <span class="solid">LANDING PAGES</span><span class="dot">✦</span>
+      <span class="outline">LANDING PAGES</span><span class="dot">✦</span>
+      <span class="solid">LANDING PAGES</span><span class="dot">✦</span>
+      <span class="outline">LANDING PAGES</span><span class="dot">✦</span>
+      <span class="solid">LANDING PAGES</span><span class="dot">✦</span>
+      <span class="outline">LANDING PAGES</span><span class="dot">✦</span>
+      <span class="solid">LANDING PAGES</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- Resumo -->
+  <section id="resumo">
+    <div class="container">
+      <span class="section-num">00</span>
+      <h2 class="section-title">Como funciona</h2>
+      <p class="section-desc">
+        A STYLISH precifica livremente para o cliente final — não há divisão de receita nem repasse percentual.
+        Vocês pagam valores fixos de fornecedor e embutem a margem no pacote de branding.
+      </p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-icon">01</div>
+          <div>
+            <h4>Cliente STYLISH</h4>
+            <p>Contrata pacote Branding + Site</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">02</div>
+          <div>
+            <h4>STYLISH</h4>
+            <ul>
+              <li>Entrega naming, ID visual e estratégia</li>
+              <li>Envia logo, cores, fontes, textos e fotos</li>
+              <li>Paga R$ 400–800 (criação) + R$ 150–250/mês se houver manutenção</li>
+              <li>Revende ao cliente pelo valor que definirem</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">03</div>
+          <div>
+            <h4>Fornecedor (eu)</h4>
+            <ul>
+              <li>Desenvolvo e publico a landing page</li>
+              <li>Entrego link + acesso</li>
+              <li>Mantenho no ar, se contratado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Criação -->
+  <section id="criacao">
+    <div class="container">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Pacote criação</h2>
+      <p class="section-desc">
+        Valores pagos pela STYLISH como fornecedor. Vocês revendem com a margem que fizer sentido para o posicionamento de vocês.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <span class="card-tag">Standard</span>
+          <h3>Landing Page</h3>
+          <div class="card-price">R$ 400<small>valor para a agência</small></div>
+          <p class="card-desc">Ideal para clientes que precisam de presença digital rápida após o branding.</p>
+          <ul class="card-list">
+            <li><span>Estrutura</span><span>Template validado</span></li>
+            <li><span>Identidade</span><span>Cores, tipografia e logo</span></li>
+            <li><span>Seções</span><span>Hero, sobre, serviços, contato</span></li>
+            <li><span>Responsivo</span><span>Mobile, tablet e desktop</span></li>
+            <li><span>SEO</span><span>Meta tags e Open Graph</span></li>
+            <li><span>Deploy</span><span>Publicação em produção</span></li>
+            <li><span>Prazo</span><span>3–5 dias úteis</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="card-tag">Custom</span>
+          <h3>Landing Page</h3>
+          <div class="card-price">R$ 600–800<small>valor para a agência</small></div>
+          <p class="card-desc">Para clientes que precisam de algo além do template, alinhado ao posicionamento da marca.</p>
+          <ul class="card-list">
+            <li><span>Estrutura</span><span>Sob medida</span></li>
+            <li><span>Seções extras</span><span>Depoimentos, galeria, FAQ</span></li>
+            <li><span>Copy</span><span>Revisão SEO e conversão</span></li>
+            <li><span>Motion</span><span>Animações leves e profissionais</span></li>
+            <li><span>Prazo</span><span>5–7 dias úteis</span></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>Sugestão de precificação para o cliente final:</strong>
+        R$ 800–1.500 (Standard) e R$ 1.200–2.500 (Custom), dependendo do pacote de branding.
+        A margem fica 100% com a STYLISH.
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee invert -->
+  <div class="marquee-wrap invert" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="outline">MANUTENÇÃO · HOSPEDAGEM · SUPORTE</span><span class="dot">✦</span>
+      <span class="solid">MANUTENÇÃO · HOSPEDAGEM · SUPORTE</span><span class="dot">✦</span>
+      <span class="outline">MANUTENÇÃO · HOSPEDAGEM · SUPORTE</span><span class="dot">✦</span>
+      <span class="solid">MANUTENÇÃO · HOSPEDAGEM · SUPORTE</span><span class="dot">✦</span>
+      <span class="outline">MANUTENÇÃO · HOSPEDAGEM · SUPORTE</span><span class="dot">✦</span>
+      <span class="solid">MANUTENÇÃO · HOSPEDAGEM · SUPORTE</span><span class="dot">✦</span>
+      <span class="outline">MANUTENÇÃO · HOSPEDAGEM · SUPORTE</span><span class="dot">✦</span>
+      <span class="solid">MANUTENÇÃO · HOSPEDAGEM · SUPORTE</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- Manutenção -->
+  <section id="manutencao">
+    <div class="container">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Manutenção mensal</h2>
+      <p class="section-desc">
+        Opcional para o cliente final. A manutenção não é dividida — a STYLISH decide se cobra do cliente e quanto.
+        O valor abaixo é o que vocês pagam como fornecedor.
+      </p>
+
+      <div class="plans">
+        <article class="plan">
+          <span class="card-tag">Plano básico</span>
+          <h3>Manutenção</h3>
+          <div class="plan-price">R$ 150<span style="font-size:1rem;font-family:Archivo,sans-serif;font-weight:300;color:var(--paper-faint)">/mês</span></div>
+          <ul>
+            <li>Hospedagem Vercel inclusa</li>
+            <li>Configuração e apontamento de domínio</li>
+            <li>Certificado SSL ativo</li>
+            <li>Até 2 alterações de conteúdo/mês</li>
+            <li>Correção de bugs e indisponibilidade</li>
+            <li>Resposta em até 48h úteis</li>
+          </ul>
+        </article>
+
+        <article class="plan">
+          <span class="card-tag">Plano plus · opcional</span>
+          <h3>Manutenção</h3>
+          <div class="plan-price">R$ 250<span style="font-size:1rem;font-family:Archivo,sans-serif;font-weight:300;color:var(--paper-faint)">/mês</span></div>
+          <ul>
+            <li>Até 5 alterações de conteúdo/mês</li>
+            <li>Relatório básico de acessos</li>
+            <li>Resposta em até 24h úteis</li>
+            <li>Tudo do plano básico incluso</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="table-wrap" style="margin-top:2.5rem">
+        <table>
+          <thead>
+            <tr>
+              <th>Extra</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alteração além do limite mensal</td>
+              <td><strong>R$ 50</strong> / alteração</td>
+            </tr>
+            <tr>
+              <td>Nova seção ou funcionalidade</td>
+              <td>Orçamento à parte</td>
+            </tr>
+            <tr>
+              <td>Migração de domínio</td>
+              <td><strong>R$ 100</strong> (único)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Sugestão de precificação para o cliente final:</strong>
+        R$ 250–400/mês (Básico) e R$ 400–600/mês (Plus).
+        Manutenção é receita recorrente pura para a STYLISH.
+      </div>
+    </div>
+  </section>
+
+  <!-- Fluxo -->
+  <section id="fluxo">
+    <div class="container">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Fluxo de trabalho</h2>
+      <p class="section-desc">Do briefing à entrega — processo simples e previsível.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h4>Briefing</h4>
+            <p>STYLISH envia identidade visual + conteúdo (ou rascunho para adaptar)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Proposta</h4>
+            <p>Confirmo Standard ou Custom + prazo de entrega</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Pagamento inicial</h4>
+            <p>50% para iniciar o desenvolvimento</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Desenvolvimento</h4>
+            <p>Preview em ambiente de teste para revisão</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Revisão</h4>
+            <p>1 rodada de ajustes inclusa na criação</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Entrega</h4>
+            <p>Publicação em produção + pagamento dos 50% restantes</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>Manutenção</h4>
+            <p>Ativação mensal, se o cliente contratar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Condições -->
+  <section id="condicoes">
+    <div class="container">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Condições comerciais</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Condição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pagamento criação</td>
+              <td>50% no início · 50% na entrega</td>
+            </tr>
+            <tr>
+              <td>Pagamento manutenção</td>
+              <td>Mensal, via Pix, todo dia 5</td>
+            </tr>
+            <tr>
+              <td>Cancelamento</td>
+              <td>Aviso de 30 dias, sem multa</td>
+            </tr>
+            <tr>
+              <td>Revisões</td>
+              <td>1 rodada inclusa; extras à parte</td>
+            </tr>
+            <tr>
+              <td>Volume</td>
+              <td>A partir de <strong>5 landing pages/mês</strong>, <strong>10% de desconto</strong> na criação</td>
+            </tr>
+            <tr>
+              <td>Propriedade</td>
+              <td>Código e domínio do cliente; hospedagem transferível</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefícios + Tabela margem -->
+  <section id="beneficios">
+    <div class="container">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Por que faz sentido</h2>
+
+      <div class="benefits">
+        <div class="benefit">
+          <h4>Receita extra</h4>
+          <p>Sem contratar dev interno — vocês ganham margem em cada projeto.</p>
+        </div>
+        <div class="benefit">
+          <h4>Pacote completo</h4>
+          <p>Branding + site numa conversa só. Cliente não precisa procurar outro fornecedor.</p>
+        </div>
+        <div class="benefit">
+          <h4>Margem livre</h4>
+          <p>Vocês definem quanto cobrar do cliente, sem repasse percentual.</p>
+        </div>
+        <div class="benefit">
+          <h4>Entrega rápida</h4>
+          <p>3–5 dias úteis, reaproveitando templates já validados.</p>
+        </div>
+        <div class="benefit">
+          <h4>Zero dor de cabeça</h4>
+          <p>Hospedagem, SSL, bugs e indisponibilidade: comigo.</p>
+        </div>
+        <div class="benefit">
+          <h4>Recorrência</h4>
+          <p>Manutenção mensal gera MRR previsível para a STYLISH.</p>
+        </div>
+      </div>
+
+      <h3 class="font-display" style="font-size:clamp(1.5rem,4vw,2.25rem);font-weight:300;margin-top:4rem;margin-bottom:0.5rem;">Exemplos de precificação</h3>
+      <p class="section-desc" style="margin-bottom:0">STYLISH → cliente final (valores ilustrativos)</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Pacote STYLISH</th>
+              <th>Custo fornecedor</th>
+              <th>Sugestão de venda</th>
+              <th>Margem STYLISH</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Branding + LP Standard</td>
+              <td>R$ 400</td>
+              <td>R$ 1.200</td>
+              <td><strong>R$ 800</strong></td>
+            </tr>
+            <tr>
+              <td>Branding + LP Custom</td>
+              <td>R$ 700</td>
+              <td>R$ 2.000</td>
+              <td><strong>R$ 1.300</strong></td>
+            </tr>
+            <tr>
+              <td>Manutenção Básica/mês</td>
+              <td>R$ 150</td>
+              <td>R$ 300</td>
+              <td><strong>R$ 150/mês</strong></td>
+            </tr>
+            <tr>
+              <td>Manutenção Plus/mês</td>
+              <td>R$ 250</td>
+              <td>R$ 500</td>
+              <td><strong>R$ 250/mês</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Valores ilustrativos — a STYLISH precifica conforme posicionamento e ticket dos clientes.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contato">
+    <div class="container" style="display:flex;flex-direction:column;align-items:center;">
+      <p class="cta-lead">Próximo passo</p>
+      <h2 class="cta-title font-display">Vamos?</h2>
+      <p class="cta-desc">
+        Alinhar esta proposta numa call rápida de 15 min, definir 1–2 clientes piloto
+        e incluir Landing Page no media kit da STYLISH.
+      </p>
+      <a href="https://wa.me/55SEUNUMEROAQUI" class="cta-btn" target="_blank" rel="noopener">
+        Agendar conversa
+        <span>→</span>
+      </a>
+      <p class="cta-contact">
+        André [sobrenome] ·
+        <a href="mailto:seu@email.com">seu@email.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      Proposta de parceria · Landing Pages · Julho 2026
+    </div>
+  </footer>
+
+</body>
+</html>

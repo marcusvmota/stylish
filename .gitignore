@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Nuxt build / cache
+.nuxt/
+.output/
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / editor
+.idea/
+*.swp
+*.swo
+
+# Local debug / screenshots (scripts temporários de dev)
+.shot-*.png
+.*.mjs
+
+# Vercel
+.vercel/
