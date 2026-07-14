@@ -19,7 +19,7 @@ useOverlay(isOpen, panel, () => emit('close'))
 const gallery = computed(() =>
   props.project
     ? [props.project.seed, `${props.project.seed}-b`, `${props.project.seed}-c`].map(
-        (s) => `https://picsum.photos/seed/${s}/1000/700`,
+        (s) => `/img/case/${s}.jpg`,
       )
     : [],
 )

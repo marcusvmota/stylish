@@ -45,7 +45,8 @@ const projects = [
 ]
 
 // color source — grayscale is applied via CSS so hover can reveal the original
-const imgUrl = (seed: string) => `https://picsum.photos/seed/${seed}/900/640`
+// self-hosted under /public/img/work so mobile networks don't depend on picsum
+const imgUrl = (seed: string) => `/img/work/${seed}.jpg`
 
 const activeIndex = ref<number | null>(null)
 const openCase = (i: number) => (activeIndex.value = i)

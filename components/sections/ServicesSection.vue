@@ -6,19 +6,19 @@ const services = [
     n: '01',
     title: 'Naming',
     desc: 'O nome certo é o primeiro ato de estratégia. Criação de nomes com significado, sonoridade e território próprio.',
-    img: 'https://picsum.photos/seed/naming/700/900',
+    img: '/img/services/naming.jpg',
   },
   {
     n: '02',
     title: 'Identidade Visual',
     desc: 'Sistemas visuais autênticos: logo, tipografia, cor e direção de arte que traduzem a essência da marca.',
-    img: 'https://picsum.photos/seed/idvisual/700/900',
+    img: '/img/services/idvisual.jpg',
   },
   {
     n: '03',
     title: 'Branding',
     desc: 'Posicionamento, propósito e experiência. A construção completa de marcas de alto padrão — Stylishs.',
-    img: 'https://picsum.photos/seed/branding/700/900',
+    img: '/img/services/branding.jpg',
   },
 ]
 
@@ -80,9 +80,9 @@ useScene(
             </p>
           </div>
 
-          <!-- image -->
-          <div class="hidden md:col-span-5 md:block">
-            <div class="aspect-[3/4] w-full max-w-sm overflow-hidden justify-self-end">
+          <!-- image (shown on mobile too) -->
+          <div class="md:col-span-5">
+            <div class="mt-8 aspect-[3/4] w-full max-w-xs overflow-hidden md:mt-0 md:max-w-sm md:justify-self-end">
               <img
                 :src="s.img"
                 :alt="`${s.title} — serviço de ${s.title.toLowerCase()} por Jonatas Santiago`"

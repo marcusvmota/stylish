@@ -56,7 +56,7 @@ const testimonials = [
           </blockquote>
           <figcaption class="mt-8 flex items-center gap-4">
             <img
-              :src="`https://picsum.photos/seed/${t.seed}/100/100?grayscale`"
+              :src="`/img/avatars/${t.seed}.jpg`"
               :alt="`Foto de ${t.name}`"
               class="h-12 w-12 rounded-full object-cover"
             />
