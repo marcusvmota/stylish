@@ -34,7 +34,7 @@ const steps = [
 const criacao = [
   {
     tier: "Standard",
-    price: "R$300",
+    price: "R$250",
     unit: "/ landing",
     items: [
       "1 página, estrutura validada",
