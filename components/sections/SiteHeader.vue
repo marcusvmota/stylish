@@ -16,7 +16,9 @@ const links = [
 
 function go(id: string) {
   open.value = false
-  scrollTo(id, { offset: 0 })
+  // useOverlay stops Lenis while the menu is open and only restarts it in a
+  // watcher; scrolling in the same tick would be ignored by a stopped Lenis.
+  nextTick(() => scrollTo(id, { offset: 0 }))
 }
 
 let lastY = 0
@@ -96,31 +98,115 @@ onBeforeUnmount(() => {
     </button>
   </header>
 
-  <Transition name="fade">
+  <Transition name="menu">
     <div
       v-if="open"
       ref="menu"
-      class="fixed inset-0 z-[165] flex flex-col items-center justify-center gap-8 bg-ink md:hidden"
+      class="menu-panel fixed inset-0 z-[165] flex flex-col justify-between overflow-hidden bg-ink px-6 pb-10 pt-24 md:hidden"
     >
-      <button
-        v-for="l in links"
-        :key="l.id"
-        class="font-display text-4xl font-light text-paper"
-        @click="go(l.id)"
-      >
-        {{ l.label }}
-      </button>
+      <!-- depth: soft top light so the black isn't flat -->
+      <div
+        class="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+        style="background: radial-gradient(80% 50% at 50% -10%, rgba(245, 244, 240, 0.09), transparent 60%)"
+      />
+
+      <nav class="relative flex flex-col" aria-label="Menu principal">
+        <button
+          v-for="(l, i) in links"
+          :key="l.id"
+          class="menu-item group flex items-baseline justify-between border-b border-paper/10 py-6 text-left"
+          :style="{ '--i': i }"
+          @click="go(l.id)"
+        >
+          <span class="flex items-baseline gap-5">
+            <span class="font-display text-sm" :class="active === l.id ? 'text-paper' : 'text-paper/40'">
+              0{{ i + 1 }}
+            </span>
+            <span
+              class="font-display text-[2.6rem] font-light leading-none tracking-tight"
+              :class="active === l.id ? 'italic text-paper' : 'text-paper/90'"
+            >
+              {{ l.label }}
+            </span>
+          </span>
+          <span
+            class="text-lg text-paper/40 transition-transform duration-300 group-active:translate-x-1"
+            aria-hidden="true"
+            >→</span
+          >
+        </button>
+      </nav>
+
+      <div class="menu-item relative flex flex-col gap-6" :style="{ '--i': links.length }">
+        <div class="flex gap-7">
+          <a
+            href="https://instagram.com/jonatassantiagos"
+            target="_blank"
+            rel="noopener"
+            class="text-[11px] uppercase tracking-[0.25em] text-paper/60"
+            >Instagram</a
+          >
+          <a
+            href="https://wa.me/5583989120922"
+            target="_blank"
+            rel="noopener"
+            class="text-[11px] uppercase tracking-[0.25em] text-paper/60"
+            >WhatsApp</a
+          >
+        </div>
+        <div class="flex items-baseline justify-between border-t border-paper/10 pt-5">
+          <span class="font-display text-lg font-semibold tracking-tightest text-paper"
+            >Jonatas Santiago<span class="align-super text-[0.55em]">®</span></span
+          >
+          <span class="text-[10px] uppercase tracking-[0.25em] text-paper/40"
+            >Estrategista de marcas</span
+          >
+        </div>
+      </div>
     </div>
   </Transition>
 </template>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.4s ease;
+/* panel: curtain wipe from the top */
+.menu-enter-active {
+  transition: clip-path 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.fade-enter-from,
-.fade-leave-to {
+.menu-leave-active {
+  transition: clip-path 0.4s cubic-bezier(0.55, 0, 0.55, 0.2), opacity 0.4s ease;
+}
+.menu-enter-from,
+.menu-leave-to {
+  clip-path: inset(0 0 100% 0);
+}
+.menu-enter-to,
+.menu-leave-from {
+  clip-path: inset(0 0 0% 0);
+}
+.menu-leave-to {
   opacity: 0;
+}
+
+/* items: staggered rise, driven by --i */
+.menu-item {
+  opacity: 1;
+  transform: none;
+}
+.menu-enter-active .menu-item {
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(0.16s + var(--i) * 0.06s);
+}
+.menu-enter-from .menu-item {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-enter-active,
+  .menu-leave-active,
+  .menu-enter-active .menu-item {
+    transition: none !important;
+  }
 }
 </style>
