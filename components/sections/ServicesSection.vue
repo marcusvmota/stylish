@@ -6,19 +6,19 @@ const services = [
     n: '01',
     title: 'Naming',
     desc: 'O nome certo é o primeiro ato de estratégia. Criação de nomes com significado, sonoridade e território próprio.',
-    img: '/img/services/naming.jpg',
+    img: '/img/services/naming.webp',
   },
   {
     n: '02',
     title: 'Identidade Visual',
     desc: 'Sistemas visuais autênticos: logo, tipografia, cor e direção de arte que traduzem a essência da marca.',
-    img: '/img/services/idvisual.jpg',
+    img: '/img/services/idvisual.webp',
   },
   {
     n: '03',
     title: 'Branding',
     desc: 'Posicionamento, propósito e experiência. A construção completa de marcas de alto padrão — Stylishs.',
-    img: '/img/services/branding.jpg',
+    img: '/img/services/branding.webp',
   },
 ]
 

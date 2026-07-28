@@ -2,12 +2,15 @@
 const canvas = ref<HTMLCanvasElement | null>(null)
 let dispose: (() => void) | null = null
 
-onMounted(() => {
+onMounted(async () => {
   // desktop / fine-pointer only — skip the WebGL load on touch devices
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
   if (!motionOK()) return // respect prefers-reduced-motion
   if (!canvas.value) return
   try {
+    // dynamic import: ~500 lines of WebGL shaders stay out of the main bundle,
+    // so phones (which never run this) don't pay to download it
+    const { fluidCursor } = await import('~/composables/useFluidCursor')
     dispose = fluidCursor(canvas.value)
   } catch (e) {
     // fail silently — the dot/ring cursor still works without the fluid layer

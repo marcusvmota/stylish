@@ -58,7 +58,7 @@ onBeforeUnmount(() => io?.disconnect())
       <!-- Portrait -->
       <div class="lg:col-span-5">
         <UiMaskImage
-          src="/image%202.jpg"
+          src="/sobre-jonatas.webp"
           alt="Retrato de Jonatas Santiago, o Stylish, o estiloso"
           class="aspect-[4/5] w-full"
           direction="up"
