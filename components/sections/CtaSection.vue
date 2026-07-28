@@ -80,7 +80,12 @@ onBeforeUnmount(() => io?.disconnect())
           ela.
         </p>
 
-        <UiMagneticButton :href="wa" :strength="0.5">
+        <UiMagneticButton
+          :href="wa"
+          :strength="0.5"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span
             class="group relative inline-flex items-center gap-4 rounded-full border border-paper px-10 py-5 text-sm uppercase tracking-[0.2em] text-paper transition-colors duration-500 hover:bg-paper hover:text-ink"
             data-cursor="vamos"
@@ -89,14 +94,6 @@ onBeforeUnmount(() => io?.disconnect())
             <span class="transition-transform duration-500 group-hover:translate-x-1">→</span>
           </span>
         </UiMagneticButton>
-
-        <a
-          :href="wa"
-          class="mt-8 text-xs uppercase tracking-[0.2em] text-paper/60 transition-colors hover:text-paper"
-          data-cursor=""
-        >
-          wa.me/5583989120922
-        </a>
       </div>
     </div>
   </section>

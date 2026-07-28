@@ -93,6 +93,8 @@ const gallery = computed(() =>
             </span>
             <a
               :href="wa"
+              target="_blank"
+              rel="noopener noreferrer"
               data-cursor="vamos"
               class="group inline-flex items-center gap-3 rounded-full border border-paper px-7 py-4 text-xs uppercase tracking-[0.2em] text-paper transition-colors duration-500 hover:bg-paper hover:text-ink"
             >
