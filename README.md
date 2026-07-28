@@ -27,7 +27,7 @@ npm run generate # site estático (SSG) -> .output/public
 
 ```
 app.vue                      # cursor custom + header + smooth scroll
-pages/index.vue              # composição das seções
+pages/index.vue              # composição das seções (rota única)
 components/
   sections/                  # uma seção por arquivo
     SiteHeader / HeroSection / ManifestoSection / AboutSection
@@ -47,22 +47,51 @@ composables/
 assets/css/main.css          # base, fontes, utilitários (text-stroke, etc.)
 ```
 
-## Substituir os placeholders pelas fotos/textos reais
+## Deploy
 
-As imagens usam `picsum.photos` (grayscale) como placeholder. Para trocar:
+Hospedado na **Vercel**, deploy automático a cada push na `main`.
+Domínio: **www.jonatassantiago.com.br** (DNS no Registro.br — registro `A`
+para a raiz e `CNAME` para o `www`, ambos apontando para a Vercel).
 
-1. Coloque as fotos reais em `public/img/` (ex: `public/img/hero.jpg`).
-2. Troque as URLs `https://picsum.photos/...` por `/img/hero.jpg` nos componentes:
-   - **Hero:** `components/sections/HeroSection.vue` (retrato principal)
-   - **Quem sou:** `components/sections/AboutSection.vue` (retrato + textos/fatos)
-   - **Serviços:** `components/sections/ServicesSection.vue` (preview ao passar o mouse)
-   - **Portfólio:** `components/sections/PortfolioSection.vue` (array `projects`: nome, categoria, imagem)
-   - **Depoimentos:** `components/sections/TestimonialsSection.vue` (array `testimonials`)
-3. Textos editáveis estão no topo de cada componente (arrays/consts) — sem precisar mexer no layout.
+## Imagens
+
+Todas as imagens são auto-hospedadas em `public/` — nenhuma depende de
+serviço externo (o site funciona em rede móvel lenta e offline).
+
+```
+public/
+  hero-jonatas.webp   # retrato do hero (LCP) — WebP, 24KB
+  image 2.jpg         # retrato da seção "Quem sou" (proporção 4:5)
+  img/work/           # portfólio (p1–p6)
+  img/case/           # galeria do modal de case
+  img/services/       # serviços
+  img/avatars/        # fotos dos depoimentos
+```
+
+As de `img/` ainda são **placeholders**; ao receber o material real do
+cliente, basta substituir os arquivos mantendo os nomes. Textos ficam em
+arrays no topo de cada componente de seção — não é preciso mexer no layout.
+
+Foto nova para "Quem sou": proporção **4:5**, mínimo **1000×1250px**
+(é recortada com `object-cover`, então o assunto deve estar centralizado).
+
+## SEO
+
+- `robots.txt` e `sitemap.xml` em `public/`
+- JSON-LD (`Person`, `ProfessionalService`, `WebSite`) em `nuxt.config.ts`
+- canonical, Open Graph e Twitter Card completos
+- SSG via `npm run generate` — o conteúdo vem renderizado no HTML
 
 ## Detalhes de marca
 
 - Cores: preto `#0a0a0a` (ink) e off-white `#f5f4f0` (paper).
-- Fontes: **Fraunces** (display serif) + **Inter** (sans). Carregadas via Google Fonts em `nuxt.config.ts`.
+- Fontes: **Bodoni Moda** (display serif) + **Archivo** (sans), via Google
+  Fonts em `nuxt.config.ts`.
 - WhatsApp do CTA: `wa.me/5583989120922` (em `CtaSection.vue` e `SiteFooter.vue`).
-# stylish
+
+## Acessibilidade
+
+Texto sobre fundo escuro usa no mínimo `text-paper/50` (4.94:1, passa WCAG
+AA). Opacidades abaixo disso reprovam e são reservadas a elementos
+decorativos. Toda animação respeita `prefers-reduced-motion` via `motionOK()`
+(`composables/useMotion.ts`).
