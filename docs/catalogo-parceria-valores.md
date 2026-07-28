@@ -50,12 +50,42 @@ prazo conforme escopo.
 | Catálogo + venda WhatsApp | **R$1.500** | vitrine + carrinho que fecha no WhatsApp, SEM gateway. **Inclui painel de cadastro/edição de produtos** |
 | E-commerce completo | **a partir de R$2.000** | sobre PLATAFORMA (Nuvemshop/WooCommerce), tema com identidade, pagamento + frete, até ~50 produtos. Mensalidade da plataforma por conta do cliente final |
 
-### Manutenção mensal
-| Tier | Valor | Cobre |
-|---|---|---|
-| Básica | **R$150** | landing (atual: hospedagem + SSL, 2 alterações/mês, suporte) |
-| Site | **R$250** | site institucional (renomeado de "Custom" — evita confusão com tier de criação) |
-| Loja | **R$300** | e-commerce: definir limite de atualizações de produto/mês + monitoramento de pedidos |
+### Manutenção mensal — FECHADA 2026-07-16 (por tipo de serviço)
+
+| Tipo | Valor |
+|---|---|
+| Landing Page | **R$150/mês** |
+| Site institucional | **R$250/mês** |
+| Loja (e-commerce) | **R$400/mês** |
+
+**O que cada uma envolve (draft a validar):**
+
+**Landing — R$150/mês**
+- Hospedagem + domínio + certificado SSL
+- Monitoramento de uptime (site no ar 24/7)
+- Backup automático
+- Correção de bugs e ajustes técnicos
+- Até **2 alterações de conteúdo**/mês (texto, imagem, preço)
+- Suporte via WhatsApp em horário comercial
+
+**Site institucional — R$250/mês**
+- Tudo da manutenção de Landing
+- Até **4 alterações de conteúdo**/mês, em qualquer página
+- Atualizações de segurança e dependências
+- Relatório mensal simples de acessos
+- Inclusão de conteúdo novo em páginas existentes (ex.: novo serviço, novo membro da equipe)
+
+**Loja — R$400/mês**
+- Tudo da manutenção de Site
+- Monitoramento do checkout (pagamento e frete funcionando)
+- Suporte à operação: erro em pedido, produto, integração
+- Até **10 atualizações de produto**/mês feitas por mim (cadastro, foto, preço)
+  — além do painel, onde o cliente edita sozinho e sem limite
+- Relatório mensal de acessos + vendas
+- Suporte prioritário
+
+**Regra transversal:** alteração extra além das inclusas: R$50 (landing/site).
+Definir: alteração extra de loja R$50 ou R$80?
 
 ### Regras de ajuste/extras (ainda em aberto)
 - [ ] Alteração extra: R$50 fixo pra tudo, ou R$80 pra e-commerce?
