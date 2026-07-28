@@ -2,7 +2,7 @@
   <main id="main" class="relative">
     <SectionsHeroSection />
 
-    <SectionsMarqueeStrip word="JONATAS SANTIAGO" outline />
+    <SectionsMarqueeStrip logo outline />
 
     <SectionsManifestoSection />
 
@@ -18,7 +18,7 @@
       <SectionsTestimonialsSection />
     </UiRevealCurtain>
 
-    <SectionsMarqueeStrip word="JONATAS SANTIAGO" />
+    <SectionsMarqueeStrip logo />
 
     <UiRevealCurtain>
       <SectionsCtaSection />

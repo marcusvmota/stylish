@@ -2,9 +2,10 @@
 const year = new Date().getFullYear()
 
 const socials = [
-  { label: 'Instagram', href: 'https://instagram.com/jonatassantiagos' },
-  { label: 'WhatsApp', href: 'https://wa.me/5583989120922' },
-  { label: 'Studio', href: 'https://instagram.com/studiojonatassantiago' },
+  { label: 'E-mail', href: 'mailto:contato@jonatassantiago.com.br', external: false },
+  { label: 'Instagram', href: 'https://instagram.com/jonatassantiagos', external: true },
+  { label: 'WhatsApp', href: 'https://wa.me/5583989120922', external: true },
+  { label: 'Studio', href: 'https://instagram.com/studiojonatassantiago', external: true },
 ]
 </script>
 
@@ -25,8 +26,8 @@ const socials = [
           v-for="s in socials"
           :key="s.label"
           :href="s.href"
-          target="_blank"
-          rel="noopener"
+          :target="s.external ? '_blank' : undefined"
+          :rel="s.external ? 'noopener' : undefined"
           class="group relative text-xs uppercase tracking-[0.2em] text-paper/60 hover:text-paper"
           data-cursor=""
         >

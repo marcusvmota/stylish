@@ -57,13 +57,14 @@ onBeforeUnmount(() => {
     class="fixed inset-x-0 top-0 z-[170] flex items-center justify-between px-6 py-5 mix-blend-difference transition-transform duration-500 ease-out md:px-10"
     :class="hidden ? '-translate-y-full' : 'translate-y-0'"
   >
-    <a
-      href="#top"
-      data-cursor="topo"
-      class="font-display text-xl font-semibold tracking-tightest text-paper"
-      @click.prevent="go('#top')"
-    >
-      JS<span class="align-super text-[0.6em]">®</span>
+    <a href="#top" data-cursor="topo" class="block" @click.prevent="go('#top')">
+      <img
+        src="/logo-simbolo.webp"
+        alt="Jonatas Santiago — ir para o topo"
+        width="128"
+        height="128"
+        class="h-9 w-9 md:h-10 md:w-10"
+      />
     </a>
 
     <nav class="hidden items-center gap-8 md:flex">
@@ -142,7 +143,7 @@ onBeforeUnmount(() => {
       </nav>
 
       <div class="menu-item relative flex flex-col gap-6" :style="{ '--i': links.length }">
-        <div class="flex gap-7">
+        <div class="flex flex-wrap gap-x-7 gap-y-3">
           <a
             href="https://instagram.com/jonatassantiagos"
             target="_blank"
@@ -156,6 +157,11 @@ onBeforeUnmount(() => {
             rel="noopener"
             class="text-[11px] uppercase tracking-[0.25em] text-paper/60"
             >WhatsApp</a
+          >
+          <a
+            href="mailto:contato@jonatassantiago.com.br"
+            class="text-[11px] uppercase tracking-[0.25em] text-paper/60"
+            >E-mail</a
           >
         </div>
         <div class="flex items-baseline justify-between border-t border-paper/10 pt-5">

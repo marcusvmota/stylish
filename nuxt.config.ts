@@ -101,6 +101,7 @@ export default defineNuxtConfig({
                   addressCountry: 'BR',
                 },
                 telephone: '+5583989120922',
+                email: 'contato@jonatassantiago.com.br',
                 serviceType: ['Naming', 'Identidade Visual', 'Branding'],
               },
               {
