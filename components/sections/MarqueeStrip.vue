@@ -6,7 +6,7 @@ withDefaults(
     logo?: boolean
     reverse?: boolean
     invert?: boolean
-    /** só vale para texto; o wordmark em imagem usa opacidade para o mesmo efeito */
+    /** versão vazada: contorno em vez de preenchido (vale para texto e wordmark) */
     outline?: boolean
   }>(),
   { word: 'STYLISH', logo: false, reverse: false, invert: false, outline: false },
@@ -19,13 +19,12 @@ withDefaults(
       <!-- decorativo: o nome ja esta no h1 e no rodape, e a faixa repete 8x -->
       <img
         v-if="logo"
-        src="/logo-wordmark.webp"
+        :src="outline ? '/logo-wordmark-outline.webp' : '/logo-wordmark.webp'"
         alt=""
         aria-hidden="true"
         width="1600"
         height="225"
         class="mx-6 h-9 w-auto md:h-16"
-        :class="outline ? 'opacity-45' : ''"
       />
       <span
         v-else
