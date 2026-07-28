@@ -15,8 +15,14 @@ const socials = [
       class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between"
     >
       <div>
-        <div class="font-display text-lg text-paper">Jonatas Santiago®</div>
-        <p class="mt-1 text-xs uppercase tracking-[0.2em] text-paper/60">
+        <img
+          src="/logo-wordmark.webp"
+          alt="Jonatas Santiago"
+          width="1600"
+          height="225"
+          class="h-6 w-auto md:h-7"
+        />
+        <p class="mt-3 text-xs uppercase tracking-[0.2em] text-paper/60">
           Estrategista de Marcas · Branding
         </p>
       </div>

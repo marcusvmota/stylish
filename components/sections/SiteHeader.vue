@@ -164,10 +164,14 @@ onBeforeUnmount(() => {
             >E-mail</a
           >
         </div>
-        <div class="flex items-baseline justify-between border-t border-paper/10 pt-5">
-          <span class="font-display text-lg font-semibold tracking-tightest text-paper"
-            >Jonatas Santiago<span class="align-super text-[0.55em]">®</span></span
-          >
+        <div class="flex items-center justify-between gap-4 border-t border-paper/10 pt-5">
+          <img
+            src="/logo-wordmark.webp"
+            alt="Jonatas Santiago"
+            width="1600"
+            height="225"
+            class="h-5 w-auto"
+          />
           <span class="text-[10px] uppercase tracking-[0.25em] text-paper/60"
             >Estrategista de marcas</span
           >
