@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /proposta
-Disallow: /proposta-parceria.html
-Disallow: /proposta-generica.html
 
 Sitemap: https://www.jonatassantiago.com.br/sitemap.xml

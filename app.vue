@@ -1,9 +1,5 @@
 <script setup lang="ts">
 useSmoothScroll()
-const route = useRoute()
-// landing-only chrome (intro, chapter indicator, site nav) shouldn't bleed
-// onto other routes like /proposta
-const isLanding = computed(() => route.path === '/')
 </script>
 
 <template>
@@ -12,11 +8,9 @@ const isLanding = computed(() => route.path === '/')
     <UiGrainOverlay />
     <UiFluidCursor />
     <UiCustomCursor />
-    <template v-if="isLanding">
-      <UiPreloader />
-      <UiSceneIndicator />
-      <SectionsSiteHeader />
-    </template>
+    <UiPreloader />
+    <UiSceneIndicator />
+    <SectionsSiteHeader />
     <NuxtPage />
   </div>
 </template>
