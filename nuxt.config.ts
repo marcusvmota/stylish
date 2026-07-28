@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'pt-BR' },
-      title: 'Jonatas Santiago — STYLISH | Estrategista de Marcas',
+      title: 'JONATASSANTIAGO — Estrategista de Marcas',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
