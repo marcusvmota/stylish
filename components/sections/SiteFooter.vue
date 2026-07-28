@@ -39,7 +39,7 @@ const socials = [
     </div>
 
     <div
-      class="mx-auto mt-12 flex max-w-7xl flex-col gap-2 border-t border-paper/10 pt-6 text-[10px] uppercase tracking-[0.2em] text-paper/30 md:flex-row md:justify-between"
+      class="mx-auto mt-12 flex max-w-7xl flex-col gap-2 border-t border-paper/10 pt-6 text-[10px] uppercase tracking-[0.2em] text-paper/60 md:flex-row md:justify-between"
     >
       <span>© {{ year }} — Todos os direitos reservados</span>
       <span>Feito com estilo, propósito e estratégia.</span>

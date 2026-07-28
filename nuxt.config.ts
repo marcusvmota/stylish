@@ -1,3 +1,5 @@
+const SITE_URL = 'https://www.jonatassantiago.com.br'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -22,20 +24,84 @@ export default defineNuxtConfig({
           content: 'Marcas autênticas, com estilo, propósito e estratégia.',
         },
         { property: 'og:type', content: 'website' },
-        { property: 'og:image', content: '/og.png' },
+        { property: 'og:url', content: SITE_URL + '/' },
+        { property: 'og:site_name', content: 'Jonatas Santiago — STYLISH' },
+        { property: 'og:locale', content: 'pt_BR' },
+        { property: 'og:image', content: SITE_URL + '/og.png' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
+        { property: 'og:image:alt', content: 'Jonatas Santiago — Estrategista de Marcas' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:image', content: '/og.png' },
+        { name: 'twitter:title', content: 'Jonatas Santiago — STYLISH' },
+        {
+          name: 'twitter:description',
+          content: 'Marcas autênticas, com estilo, propósito e estratégia.',
+        },
+        { name: 'twitter:image', content: SITE_URL + '/og.png' },
         { name: 'theme-color', content: '#0a0a0a' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'canonical', href: SITE_URL + '/' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Archivo:wght@300;400;500;600&display=swap',
+        },
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Person',
+                '@id': SITE_URL + '/#jonatas',
+                name: 'Jonatas Santiago',
+                jobTitle: 'Estrategista de Marcas',
+                description:
+                  'Estrategista de marcas com mais de 10 anos de experiência em naming, identidade visual e branding de alto padrão.',
+                url: SITE_URL,
+                image: SITE_URL + '/hero-jonatas.webp',
+                sameAs: [
+                  'https://instagram.com/jonatassantiagos',
+                  'https://instagram.com/studiojonatassantiago',
+                ],
+                knowsAbout: ['Naming', 'Identidade Visual', 'Branding', 'Estratégia de Marca'],
+                alumniOf: { '@type': 'CollegeOrUniversity', name: 'UFCG' },
+              },
+              {
+                '@type': 'ProfessionalService',
+                '@id': SITE_URL + '/#studio',
+                name: 'STYLISH — Studio Jonatas Santiago',
+                description:
+                  'Estúdio de branding: naming, identidade visual e estratégia de marca para marcas de alto padrão.',
+                url: SITE_URL,
+                image: SITE_URL + '/og.png',
+                founder: { '@id': SITE_URL + '/#jonatas' },
+                priceRange: '$$$',
+                areaServed: 'BR',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Campina Grande',
+                  addressRegion: 'PB',
+                  addressCountry: 'BR',
+                },
+                telephone: '+5583989120922',
+                serviceType: ['Naming', 'Identidade Visual', 'Branding'],
+              },
+              {
+                '@type': 'WebSite',
+                '@id': SITE_URL + '/#website',
+                url: SITE_URL,
+                name: 'Jonatas Santiago — STYLISH',
+                inLanguage: 'pt-BR',
+                publisher: { '@id': SITE_URL + '/#studio' },
+              },
+            ],
+          }),
         },
       ],
     },

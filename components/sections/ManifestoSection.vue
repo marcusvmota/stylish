@@ -44,7 +44,7 @@ onBeforeUnmount(() => io?.disconnect())
   <section id="manifesto" ref="root" class="relative overflow-hidden bg-ink">
     <!-- blurred portrait backdrop for depth / "something's here" cue -->
     <div class="pointer-events-none absolute inset-[-6%] opacity-20" aria-hidden="true">
-      <img src="/image%203.png" alt="" class="h-full w-full object-cover blur-2xl grayscale" />
+      <img src="/hero-jonatas.webp" alt="" class="h-full w-full object-cover blur-2xl grayscale" />
       <div class="absolute inset-0 bg-ink/50" />
     </div>
 

@@ -2,14 +2,24 @@
 const wa = "https://wa.me/5583989120922";
 const agency = "JS Studio";
 
+const pageTitle = "Proposta de Parceria — Landing Pages | Jonatas Santiago";
+const pageDesc =
+  "Parceria white-label: landing pages de alto padrão para o pacote da sua agência de branding.";
+
 useHead({
-  title: "Proposta de Parceria — Landing Pages | Jonatas Santiago",
+  title: pageTitle,
   meta: [
-    {
-      name: "description",
-      content:
-        "Parceria white-label: landing pages de alto padrão para o pacote da sua agência de branding."
-    }
+    { name: "description", content: pageDesc },
+    // proposta comercial: não faz sentido disputar busca orgânica
+    { name: "robots", content: "noindex, follow" },
+    { property: "og:title", content: pageTitle },
+    { property: "og:description", content: pageDesc },
+    { property: "og:url", content: "https://www.jonatassantiago.com.br/proposta" },
+    { name: "twitter:title", content: pageTitle },
+    { name: "twitter:description", content: pageDesc }
+  ],
+  link: [
+    { rel: "canonical", href: "https://www.jonatassantiago.com.br/proposta" }
   ]
 });
 
@@ -363,7 +373,7 @@ const condicoes = [
               :key="i"
               class="flex items-start gap-4 border-b border-paper/10 pb-5 text-base font-light text-paper/80"
             >
-              <span class="font-display text-sm text-paper/40"
+              <span class="font-display text-sm text-paper/60"
                 >0{{ i + 1 }}</span
               >
               {{ b }}

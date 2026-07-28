@@ -123,7 +123,7 @@ const word = ['S', 'T', 'Y', 'L', 'I', 'S', 'H']
       >
         <div class="hero-portrait-inner h-full w-full overflow-hidden">
           <img
-            src="/image%203.png"
+            src="/hero-jonatas.webp"
             alt="Jonatas Santiago, estrategista de marcas, retrato em preto e branco"
             width="700"
             height="1100"

@@ -56,6 +56,7 @@ useScene(
 
 <template>
   <section id="servicos" ref="root" class="relative bg-ink">
+    <h2 class="sr-only">Serviços — do nome ao universo da marca</h2>
     <!-- Desktop scene: stacked full-screen panels. Mobile: normal stacked flow. -->
     <div class="relative" :class="sceneActive ? 'md:h-[100svh] md:overflow-hidden' : ''">
       <div

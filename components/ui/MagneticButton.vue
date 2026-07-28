@@ -12,10 +12,11 @@ const props = withDefaults(
 
 const root = ref<HTMLElement | null>(null)
 let xTo: gsap.QuickToFunc, yTo: gsap.QuickToFunc
+let magnetic = false
 
 function onMove(e: MouseEvent) {
   const el = root.value
-  if (!el) return
+  if (!el || !magnetic) return
   const rect = el.getBoundingClientRect()
   const x = (e.clientX - (rect.left + rect.width / 2)) * props.strength
   const y = (e.clientY - (rect.top + rect.height / 2)) * props.strength
@@ -24,11 +25,14 @@ function onMove(e: MouseEvent) {
 }
 
 function onLeave() {
+  if (!magnetic) return
   xTo(0)
   yTo(0)
 }
 
 onMounted(() => {
+  if (!motionOK()) return // reduced-motion: button stays put
+  magnetic = true
   xTo = gsap.quickTo(root.value, 'x', { duration: 0.6, ease: 'elastic.out(1, 0.4)' })
   yTo = gsap.quickTo(root.value, 'y', { duration: 0.6, ease: 'elastic.out(1, 0.4)' })
 })

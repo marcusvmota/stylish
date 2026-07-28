@@ -24,6 +24,8 @@ onMounted(() => {
   setX(cur.x)
   setY(cur.y)
 
+  if (!motionOK()) return // reduced-motion: glow stays centered, no tracking
+
   tickerFn = () => {
     cur.x += (target.x - cur.x) * 0.12
     cur.y += (target.y - cur.y) * 0.12

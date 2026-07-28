@@ -84,7 +84,9 @@ onBeforeUnmount(() => {
 
     <button
       class="flex h-8 w-8 flex-col items-end justify-center gap-1.5 md:hidden"
-      aria-label="Menu"
+      :aria-label="open ? 'Fechar menu' : 'Abrir menu'"
+      :aria-expanded="open"
+      aria-controls="menu-mobile"
       @click="open = !open"
     >
       <span
@@ -101,6 +103,7 @@ onBeforeUnmount(() => {
   <Transition name="menu">
     <div
       v-if="open"
+      id="menu-mobile"
       ref="menu"
       class="menu-panel fixed inset-0 z-[165] flex flex-col justify-between overflow-hidden bg-ink px-6 pb-10 pt-24 md:hidden"
     >
@@ -120,7 +123,7 @@ onBeforeUnmount(() => {
           @click="go(l.id)"
         >
           <span class="flex items-baseline gap-5">
-            <span class="font-display text-sm" :class="active === l.id ? 'text-paper' : 'text-paper/40'">
+            <span class="font-display text-sm" :class="active === l.id ? 'text-paper' : 'text-paper/60'">
               0{{ i + 1 }}
             </span>
             <span
@@ -131,7 +134,7 @@ onBeforeUnmount(() => {
             </span>
           </span>
           <span
-            class="text-lg text-paper/40 transition-transform duration-300 group-active:translate-x-1"
+            class="text-lg text-paper/60 transition-transform duration-300 group-active:translate-x-1"
             aria-hidden="true"
             >→</span
           >
@@ -159,7 +162,7 @@ onBeforeUnmount(() => {
           <span class="font-display text-lg font-semibold tracking-tightest text-paper"
             >Jonatas Santiago<span class="align-super text-[0.55em]">®</span></span
           >
-          <span class="text-[10px] uppercase tracking-[0.25em] text-paper/40"
+          <span class="text-[10px] uppercase tracking-[0.25em] text-paper/60"
             >Estrategista de marcas</span
           >
         </div>

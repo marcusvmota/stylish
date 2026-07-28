@@ -50,14 +50,20 @@ onBeforeUnmount(() => io?.disconnect())
     <UiSpotlight />
 
     <div class="relative z-10 flex flex-col items-center">
-      <h2 class="cta-lead font-display text-2xl font-light italic text-paper/80 md:text-4xl">
+      <!-- the phrase is split across two animated blocks; the heading carries it whole -->
+      <h2 class="sr-only">Vamos criar algo Stylish?</h2>
+
+      <div
+        class="cta-lead font-display text-2xl font-light italic text-paper/80 md:text-4xl"
+        aria-hidden="true"
+      >
         Vamos criar algo
-      </h2>
+      </div>
 
       <div
         class="mt-2 flex select-none justify-center font-display font-semibold leading-[0.95] tracking-tightest text-paper"
         style="font-size: clamp(3.5rem, 14vw, 13rem); perspective: 600px"
-        aria-label="Stylish?"
+        aria-hidden="true"
       >
         <span
           v-for="(l, i) in word"
